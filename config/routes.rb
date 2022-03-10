@@ -3,12 +3,8 @@ Rails.application.routes.draw do
   get 'homes/index'
   namespace :api do
     namespace :v1 do
-      resources :restaurants do
-        resources :foods, only: %i[index]
-      end
-      resources :line_foods, only: %i[index create]
-      put 'line_foods/replace', to: 'line_foods#replace'
-      resources :orders, only: %i[create]
+      # api test action
+      resources :hello, only:[:index]
     end
   end
 end
